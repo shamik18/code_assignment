@@ -4,6 +4,10 @@ import com.mycomp.enumtype.EnumCmdType;
 
 import java.util.List;
 
+/**
+ * The class responsible for generating messages. This class prepare different kind of messages.
+ * In future this class can be extended to support I18n.
+ */
 public class Message {
     public static final String INVALID_IND = "The %s indicator pass in the command line is not supported";
     public static final String EXCEPTION_DATE_VALIDATION = "The %s not a supported date format ";
@@ -23,9 +27,13 @@ public class Message {
     public static final String RES_MSG = "The Most Active Cookie  on the date %s ";
     public static final String RES_NO_COUNT = "There no session found in %s on the date %s ";
 
-
+    /**
+     * Message need to display by console.
+     */
     private String message;
-
+    /**
+     * Holds the type of commands.
+     */
     private EnumCmdType commandType;
 
 
@@ -45,6 +53,10 @@ public class Message {
         this.message = message;
     }
 
+    /**
+     * This methods prepare message bases on different command line input.
+     * @param args parameters that has been passed as comment.
+     */
     public void prepareMessage(String... args){
         StringBuilder stringBuilder = new StringBuilder();
         switch (commandType){
@@ -90,7 +102,11 @@ public class Message {
         }
     }
 
-
+    /**
+     * This methods prepare the results that need to be displayed.
+     * @param sessionList list of most popular sessions founds.
+     * @param parameters input parameters passed as the command line.
+     */
     public void prepareResult(List<String> sessionList,String... parameters) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(Message.RES_DL);
@@ -111,6 +127,10 @@ public class Message {
         message = stringBuilder.toString();
     }
 
+    /**
+     * This method will used to log the message object.
+     * @return String of indicate the message. 
+     */
     @Override
     public String toString() {
         return "Message{" +
@@ -119,7 +139,11 @@ public class Message {
                 '}';
     }
 
-    public void prepareExceptionMessage(String s) {
-        message = s;
+    /**
+     * This method prepare the application when exception occurs.
+     * @param exceptionMsg message passed by exception handler.
+     */
+    public void prepareExceptionMessage(String exceptionMsg) {
+        message = exceptionMsg;
     }
 }

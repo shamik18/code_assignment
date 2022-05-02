@@ -18,8 +18,19 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This class is the service class that used to read the csv file and give the most frequent
+ * session in the file for a give date.
+ */
 public class SessionFreqService {
     private static final Logger log = LogManager.getLogger(SessionFreqService.class);
+
+    /**
+     * This method provide the most common session in the file on the give date.
+     * @param sessionArgs hold session arguments.
+     * @return list of most common session.
+     * @throws DataSetOperationFailureException stream exception.
+     */
     public List<String> getHighterFreqSession(SessionArgs sessionArgs) throws DataSetOperationFailureException {
         log.info("Parameter received by application {}",sessionArgs);
         String fileName = sessionArgs.fileName();

@@ -9,18 +9,34 @@ import com.mycomp.service.SessionFreqService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class represent the application. This application reads the file from
+ * command line and find out most favourite session in the file on a particular
+ * date.
+ */
 public class App {
-    private static final AppicationContext appicationContext = new AppicationContext();
+    /**
+     * This holds all the context application need . This holds the necessary setup classes that
+     * application used for. This act as context and share information across different part of the
+     * application.
+     */
+    private static final ApplicationContext appicationContext = new ApplicationContext();
+    /**
+     * Log information for the application.
+     */
     private static final Logger log = LogManager.getLogger(App.class);
 
-    public static AppicationContext appicationContext() {
+    public static ApplicationContext appicationContext() {
         return appicationContext;
     }
 
+    /**
+     * Application entry point.
+     * @param args holds command line arguments as an array of string.
+     */
     public static void main(String[] args) {
         log.debug("Initialization of App Started");
         init();
@@ -50,6 +66,9 @@ public class App {
         }
     }
 
+    /**
+     * Initialized the application configuration.
+     */
     private static void init() {
         AppConfig appConfig = new AppConfig();
         appConfig.loadConfig();

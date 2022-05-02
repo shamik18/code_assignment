@@ -1,12 +1,16 @@
 package com.mycomp.app;
 
-import com.mycomp.enumtype.EnumCmdType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * This class responsible to display the message to console.
+ */
 public class Console {
-    private static Logger log = LogManager.getLogger(Console.class);
-
+    private static final Logger log = LogManager.getLogger(Console.class);
+    /**
+     * This holds the instance of message.
+     */
     private Message message;
 
     public Console setMessage(Message message) {

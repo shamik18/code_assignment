@@ -1,6 +1,5 @@
 package com.mycomp.context;
 
-import com.mycomp.cmd.CommandLine;
 import com.mycomp.reader.CSVFileReader;
 import com.mycomp.util.ReflectionUtils;
 import org.apache.logging.log4j.LogManager;
@@ -9,13 +8,16 @@ import org.apache.logging.log4j.Logger;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Check the documentation on interface.
+ * @param <T> type of the Data Set.
+ */
 public class DataSet<T> implements IDataSet<T>, Closeable {
     private static final Logger log = LogManager.getLogger(DataSet.class);
     private Stream<T> stream;
