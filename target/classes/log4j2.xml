@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" monitorInterval="900" xmlns:xi="http://logging.apache.org/log4j/2.0/config">
+    <Properties>
+        <Property name="rootPath"  value="/home/admin1/logs" />
+        <Property name="logfile"  value="session_freq_count" />
+    </Properties>
+    <Appenders>
+        <RollingFile name="fileLogger" fileName="${rootPath}/${logfile}.log"
+                     filePattern="${rootPath}/$${date:yyyy-MM}/${logfile}-%d{MM-dd-yyyy}-%i.log.gz" >
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.mycomp" level="info" additivity="false">
+            <AppenderRef ref="fileLogger"/>
+            <AppenderRef ref="console"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>
+
