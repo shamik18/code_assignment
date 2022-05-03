@@ -1,6 +1,6 @@
 # code_assignment
 ## Most Active Cookie
-Given a cookie log file in the following format:
+Given a cookie log file in the following format:  
 cookie,timestamp  
 AtY0laUfhglK3lC7,2018-12-09T14:19:00+00:00  
 SAZuXPGUrfbcn5UA,2018-12-09T10:13:00+00:00  
