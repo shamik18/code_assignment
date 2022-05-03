@@ -19,18 +19,19 @@ And it would write to stdout:
 AtY0laUfhglK3lC7
 We define the most active cookie as one seen in the log the most times during a given day.
 
-# Assumptions:
-If multiple cookies meet that criteria, please return all of them on separate lines.
-Please only use additional libraries for testing, logging and cli-parsing. There are libraries for most
-languages which make this too easy (e.g pandas) and we’d like you to show off your coding skills.
-You can assume -d parameter takes date in UTC time zone.
-You have enough memory to store the contents of the whole file.
-Cookies in the log file are sorted by timestamp (most recent occurrence is the first line of the file).
-We're looking for a concise, maintainable, extendable and correct solution. We're hoping you'll deliver your
-solution as production grade code and demonstrate:
+## Assumptions:
+* If multiple cookies meet that criteria, please return all of them on separate lines.
+* Please only use additional libraries for testing, logging and cli-parsing. There are libraries for most
+  languages which make this too easy (e.g pandas) and we’d like you to show off your coding skills.
+* You can assume -d parameter takes date in UTC time zone.
+* You have enough memory to store the contents of the whole file.
+* Cookies in the log file are sorted by timestamp (most recent occurrence is the first line of the file).
+* We're looking for a concise, maintainable, extendable and correct solution. 
 
-good testing practices
-knowledge of build systems, testing frameworks, etc.
-clean coding practices (meaningful names, clean abstractions, etc.)
+We're hoping you'll deliver your solution as production grade code and demonstrate:
+* good testing practices
+* knowledge of build systems, testing frameworks, etc.
+* clean coding practices (meaningful names, clean abstractions, etc.)
+
 Please use a programming language you’re very comfortable with. The next stage of the interview
 will involve extending your code.
